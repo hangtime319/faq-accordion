@@ -1,12 +1,143 @@
+/* FONT */
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* VARIABLES - COLORS */
+:root {
+  --white: hsl(0, 0%, 100%);
+  --light-pink: hsl(275, 100%, 97%);
+  --grayish-purple: hsl(292, 16%, 49%);
+  --dark-purple: hsl(292, 42%, 14%);
+  --details-hover: #ad28eb;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* GENERAL */
+body {
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  background-color: var(--light-pink);
+  background-image: url("./images/background-pattern-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+}
+
+.container {
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.5em;
+  border-radius: 10px;
+  width: 400px;
+}
+
+.title {
+  display: flex;
+  gap: 1em;
+  margin: 0.5em 0 0.8em 0;
+}
+
+.title img {
+  width: 22px;
+}
+
+.title h1 {
+  font-size: 2rem;
+}
+
+details {
+  display: flex;
+  position: relative;
+  margin-top: 1em;
+  border-bottom: 2px solid var(--light-pink);
+  margin: 0.5em 0;
+  padding-bottom: 1em;
+  width: 100%;
+}
+
+details::after {
+  content: '';
+  display: inline-block;
+  
+}
+
+details summary {
+  cursor: pointer;
+}
+
+summary {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--dark-purple);
+}
+
+summary:hover {
+  color: var(--details-hover);
+}
+
+summary::after {
+  content: url("images/icon-plus.svg");
+  display: inline-block;
+  position: absolute;
+  top: auto;
+  right: 0;
+}
+
+details[open] > summary:after {
+  content: url("images/icon-minus.svg");
+  display: inline-block;
+  position: absolute;
+  top: auto;
+  right: 0;
+}
+
+details:nth-child(5){
+  padding-bottom: 0;
+  border: none;
+}
+
+p {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  max-width: 52ch;
+  color: var(--grayish-purple);
+  margin-top: 1em;
+}
+
+@media (max-width: 475px) {
+  body {
+    background-image: url("./images/background-pattern-mobile.svg");
+  }
+  .container {
+    max-width: 90%;
+    padding: 1em;
+  }
+}
+
 .attribution {
+  margin-top: 0.5em;
   font-size: 11px;
   text-align: center;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
-}
-
-
-body {
-    font-family: 'Work Sans', sans-serif;
 }
